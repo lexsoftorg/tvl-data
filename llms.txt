@@ -6,7 +6,7 @@ TVL Data Transfer captures changes from enterprise systems, refines them, and ex
 
 ## What it does
 - Change data capture (CDC) from SAP, Oracle, SQL Server, DB2, Postgres, data lakes and files — reads the change stream at commit, never scans whole tables, never rewrites your applications.
-- Lands data in any target you choose: a data lake, database or warehouse (BigQuery, Postgres, MySQL, MongoDB, and more).
+- Lands data in any target you choose: a data lake, database or warehouse (BigQuery, Postgres, MySQL, Oracle, Splunk, Elasticsearch, and more).
 - Refines data in three layers — Bronze (raw, as it lands), Silver (cleaned and conformed), Gold (business-ready).
 - Serves the governed Gold tier to AI agents through an MCP server — curated data, not raw tables, with every answer traceable to auditable records.
 

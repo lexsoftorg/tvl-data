@@ -1582,7 +1582,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(125deg, rgba(255,73,49,0.42) 0%, rgba(15,15,15,0.60) 100%);
+      background: linear-gradient(125deg, rgba(255,73,49,0.34) 0%, rgba(15,15,15,0.20) 100%);
       mix-blend-mode: multiply;
       pointer-events: none;
     }
