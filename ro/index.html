@@ -6,9 +6,9 @@
   <link rel="apple-touch-icon" href="../favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TVL Data Transfer | Stratul de date suveran pentru AI</title>
-  <meta name="description" content="Mută datele enterprise din orice sursă către orice agent AI — guvernate și pregătite pentru AI. Change data capture în Google BigQuery, rafinate Bronze → Silver → Gold, interogate printr-un server MCP. Păstrează-le suverane: în UE, on-premise sau în cloud-ul tău.">
+  <meta name="description" content="Mută datele enterprise din orice sursă către orice agent AI — guvernate și pregătite pentru AI. Change data capture în data lake-ul, baza de date sau warehouse-ul tău, rafinate Bronze → Silver → Gold, interogate printr-un server MCP. Păstrează-le suverane: în UE, on-premise sau în cloud-ul tău.">
   <meta property="og:title" content="TVL Data Transfer — Stratul de date suveran pentru AI">
-  <meta property="og:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în BigQuery, rafinate și auditabile, interogate printr-un server MCP. Aliniat la EU AI Act și GDPR.">
+  <meta property="og:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în lake-ul, baza de date sau warehouse-ul tău, rafinate și auditabile, interogate printr-un server MCP. Aliniat la EU AI Act și GDPR.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data.tvl.tech/ro/">
   <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TVL Data Transfer — Stratul de date suveran pentru AI">
-  <meta name="twitter:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în BigQuery, rafinate și auditabile, interogate printr-un server MCP.">
+  <meta name="twitter:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în lake-ul, baza de date sau warehouse-ul tău, rafinate și auditabile, interogate printr-un server MCP.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
 
   <!-- Canonical + alternates -->
@@ -43,7 +43,7 @@
     "name": "TVL Data Transfer",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Cloud, on-premise, hibrid",
-    "description": "Stratul de date suveran pentru AI. Change data capture din surse enterprise în Google BigQuery, rafinate Bronze → Silver → Gold și interogate de agenți AI printr-un server MCP. Aliniat la EU AI Act și GDPR.",
+    "description": "Stratul de date suveran pentru AI. Change data capture din surse enterprise în data lake-ul, baza de date sau warehouse-ul tău, rafinate Bronze → Silver → Gold și interogate de agenți AI printr-un server MCP. Aliniat la EU AI Act și GDPR.",
     "provider": {
       "@type": "Organization",
       "name": "TVL Tech",
@@ -162,16 +162,16 @@
     <div class="section-title-center fade-in">
       <span class="red-label">Suveranitate, definită</span>
       <h2 class="section-h2">Suverane atunci când ai nevoie</h2>
-      <p>Suveranitatea este o alegere pe care o arhitecturezi. Construim astfel încât datele să poată rămâne în UE sau on-premise, aliniate la EU AI Act, GDPR și Gaia-X.</p>
+      <p>Suveranitatea este o alegere pe care o arhitecturezi. Construim astfel încât datele să poată rămâne în UE sau on-premise — sub cheile și jurisdicția ta — aliniate la EU AI Act, GDPR și Gaia-X.</p>
     </div>
     <div class="urgenta-grid">
       <div class="urgenta-card fade-in">
         <h3>Tu alegi unde stau datele</h3>
-        <p>Regiuni UE, on-premise sau cloud-ul tău. Arhitectura ta, decizia ta — niciodată forțate în estate-ul unui singur vendor.</p>
+        <p>Regiuni UE, on-premise, air-gapped sau cloud-ul tău. Arhitectura ta, decizia ta — niciodată forțate în estate-ul unui singur vendor.</p>
       </div>
       <div class="urgenta-card fade-in">
         <h3>Tu deții cheile</h3>
-        <p>Infrastructura ta și cheile tale de criptare. Noi operăm pipeline-ul; tu păstrezi controlul datelor la fiecare pas.</p>
+        <p>Infrastructura ta și cheile tale de criptare — pipeline-ul rulează în jurisdicția ta, nu în control plane-ul unui vendor. Noi îl operăm; datele și cheile rămân ale tale.</p>
       </div>
       <div class="urgenta-card fade-in">
         <h3>Auditabil, cap la cap</h3>
@@ -184,6 +184,7 @@
       <span class="standards-chip">Rezidența datelor</span>
       <span class="standards-chip">Lineage auditabil</span>
       <span class="standards-chip">Criptat în tranzit</span>
+      <span class="standards-chip">Chei deținute de client</span>
       <span class="standards-chip">Aliniat Gaia-X</span>
     </div>
     <div class="urgenta-cta fade-in">
@@ -227,8 +228,8 @@
 <section class="sprint-focus" id="sources">
   <div class="container">
     <div class="section-title-center fade-in">
-      <h2 class="section-h2">Surse enterprise în Google BigQuery</h2>
-      <p>O încărcare curată a istoricului, apoi un flux live. Sistemele tale sursă rulează în tot acest timp.</p>
+      <h2 class="section-h2">Surse enterprise în data lake-ul sau warehouse-ul tău</h2>
+      <p>Aduci datele în target-ul pe care îl alegi — un data lake, o bază de date sau un warehouse precum BigQuery, Postgres, MySQL sau MongoDB. O încărcare curată a istoricului, apoi un flux live, cu sistemele sursă rulând în tot acest timp.</p>
     </div>
 
     <div class="flow-diagram fade-in">
@@ -246,14 +247,14 @@
       <div class="flow-arrow">→</div>
       <div class="flow-node">
         <div class="flow-kicker">Target</div>
-        <div class="flow-title">Google BigQuery</div>
-        <div class="flow-sub">Tabele gata de analiză, cu chei și tipuri păstrate</div>
+        <div class="flow-title">Lake-ul sau warehouse-ul tău</div>
+        <div class="flow-sub">BigQuery, Postgres, MySQL, MongoDB &amp; altele — chei și tipuri păstrate</div>
       </div>
     </div>
 
     <div class="sprint-top-grid" style="grid-template-columns:1fr;margin-top:24px;">
       <div class="sprint-overview-card fade-in">
-        <span class="sprint-mini-label">Ce ajunge în BigQuery</span>
+        <span class="sprint-mini-label">Ce ajunge în target-ul tău</span>
         <div class="sprint-overview-notes" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="sprint-overview-note">
             <strong>Citește tabele SAP, change log-uri Oracle și altele</strong>
@@ -268,8 +269,8 @@
             <p>Un backfill curat, apoi un flux live de modificări peste el.</p>
           </div>
           <div class="sprint-overview-note">
-            <strong>Livrează tabele gata de analiză în BigQuery</strong>
-            <p>Pregătite pentru rafinare, raportare și agenți AI.</p>
+            <strong>Livrează tabele gata de analiză în target-ul tău</strong>
+            <p>Un lake, o bază de date sau un warehouse — pregătite pentru rafinare, raportare și agenți AI.</p>
           </div>
         </div>
       </div>
@@ -283,7 +284,7 @@
     <div class="section-title-center fade-in">
       <span class="red-label">Rafinarea datelor</span>
       <h2 class="section-h2">De la brut la pregătit, în trei straturi</h2>
-      <p>Fiecare strat trăiește în BigQuery — versionat și auditabil.</p>
+      <p>Fiecare strat trăiește în target-ul tău — lake, bază de date sau warehouse — versionat și auditabil.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card tier-bronze fade-in">
@@ -367,7 +368,7 @@
     <div class="section-title-center fade-in">
       <span class="red-label">Agenți AI la lucru</span>
       <h2 class="section-h2">Agenți care răspund din date în care ai încredere</h2>
-      <p>Printr-un server MCP, agenții tăi ajung la datele din stratul Gold — guvernate și pregătite. Îi rulezi în SUA, în UE sau on-premise.</p>
+      <p>Printr-un server MCP, agenții tăi interoghează stratul Gold guvernat — date curate, pregătite pentru business, nu tabele brute — așa că răspunsurile rămân de încredere și trasabile. Îi rulezi în SUA, în UE sau on-premise.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card fade-in">
@@ -490,7 +491,7 @@
           Ce surse și target-uri suportați?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer">Surse enterprise precum SAP, Oracle, Postgres, data lakes și fișiere, capturate log-based sau trigger-based. Target-ul principal este Google BigQuery, rafinat Bronze → Silver → Gold, dar pipeline-ul mută orice sursă către orice target.</div>
+        <div class="faq-answer">Surse enterprise precum SAP, Oracle, SQL Server, DB2, Postgres, data lakes și fișiere, capturate log-based sau trigger-based. Target-urile le alegi tu — BigQuery, Postgres, MySQL, MongoDB și alte lake-uri, baze de date și warehouse-uri — rafinate Bronze → Silver → Gold. Din orice sursă către orice target.</div>
       </div>
       <div class="faq-item fade-in">
         <button class="faq-question" type="button">

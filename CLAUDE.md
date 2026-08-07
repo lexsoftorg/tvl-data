@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing landing page for **TVL Data Transfer** — TVL Tech's "sovereign data layer for AI": change-data-capture pipelines that move enterprise data (SAP, Oracle, Postgres, files) into Google BigQuery, refine it Bronze → Silver → Gold, and serve it to AI agents through an MCP server. Bilingual (English + Romanian), hosted on GitHub Pages at custom domain `data.tvl.tech`.
+Static marketing landing page for **TVL Data Transfer** — TVL Tech's "sovereign data layer for AI": change-data-capture pipelines that move enterprise data (SAP, Oracle, SQL Server, DB2, Postgres, files) into the customer's chosen target — a data lake, database or warehouse (e.g. BigQuery, Postgres, MySQL, MongoDB) — refine it Bronze → Silver → Gold, and serve it to AI agents through an MCP server. **Target-agnostic: BigQuery is one example, not the only target — don't reframe the copy as BigQuery-only.** Bilingual (English + Romanian), hosted on GitHub Pages at custom domain `data.tvl.tech`.
 
 This site is a sibling of `../tvl-academy-lp` and deliberately reuses its design system and stack. When something is unclear, that repo is the reference implementation.
 
@@ -21,7 +21,7 @@ The Romanian page lives in a subdirectory, so it references assets one level up:
 
 ## Page structure (both languages, in order)
 
-hero → challenge → sovereignty (+ standards band) → how it works (Capture/Route/Deliver) → sources→BigQuery (flow diagram) → data refinement (Bronze/Silver/Gold medallion) → capabilities checklist → reliability & scale (22,000 rows/sec metric) → AI agents → how we compare (3 cards, TVL is `.is-winner`) → Romstal case study → track record → FAQ → contact → footer.
+hero (architecture diagram GIF) → challenge → sovereignty (+ standards band) → how it works (Capture/Route/Deliver) → sources→target (flow diagram) → data refinement (Bronze/Silver/Gold medallion) → capabilities checklist → reliability & scale (22,000 rows/sec metric) → AI agents → how we compare (3 cards, TVL is `.is-winner`) → Romstal case study → track record → FAQ → contact → footer.
 
 All source content derives from the "TVL Data Transfer v6" deck (15 slides). Keep claims consistent with it — notably `22,000 rows/second`, `2 to thousands of nodes`, and the Romstal stack (Vertex AI · LangChain/LangGraph · Cloud Run).
 
