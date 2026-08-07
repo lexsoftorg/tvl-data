@@ -57,6 +57,23 @@
     }
   }
   </script>
+
+  <!-- FAQ structured data (rich results + AI answer engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Which sources and targets do you support?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise sources such as SAP, Oracle, SQL Server, DB2, Postgres, data lakes and files, captured log-based or trigger-based. Targets are yours to choose — BigQuery, Postgres, MySQL, MongoDB and other lakes, databases and warehouses — refined Bronze to Silver to Gold. Any source to any target." } },
+      { "@type": "Question", "name": "Does it disrupt our source systems?", "acceptedAnswer": { "@type": "Answer", "text": "No. It reads from the change stream rather than scraping whole tables, and never rewrites your applications. We do one clean bulk load of history, then a continuous live sync on top, so your systems keep running throughout." } },
+      { "@type": "Question", "name": "Where does our data live, and who holds the keys?", "acceptedAnswer": { "@type": "Answer", "text": "Wherever you decide — EU regions, on-premise, or your own cloud. You keep your infrastructure and your encryption keys; we operate the pipeline while you keep control. Every hop is logged for full, auditable lineage." } },
+      { "@type": "Question", "name": "How do AI agents consume the data?", "acceptedAnswer": { "@type": "Answer", "text": "Through an MCP server, your agents query the governed Gold-tier data directly. They run in the US, the EU or on-premise, and every answer is traceable to real, prepared, auditable records." } },
+      { "@type": "Question", "name": "Is it reliable at scale?", "acceptedAnswer": { "@type": "Answer", "text": "Every batch is tracked in a transaction and retried through outages, so delivery resumes where it stopped with nothing dropped. Peak sustained throughput on our reference deployment is 22,000 rows per second, and it scales from 2 to thousands of nodes." } },
+      { "@type": "Question", "name": "Can it sync in both directions without data clashing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The pipeline runs bidirectional and multi-primary, so several systems can write at once. Conflicts are detected on the primary key, changed data, or a timestamp or version column, then resolved with a deterministic strategy — newer-wins, or flagged for manual review — and you set the rule per table." } },
+      { "@type": "Question", "name": "How do we start — migration or continuous sync?", "acceptedAnswer": { "@type": "Answer", "text": "Either. We scope, build and operate the pipeline end to end: a single migration off a legacy system, a continuous sync between platforms, or a permanent integration layer. Tell us the two systems and we stand up a working pipeline on your own data in weeks, not quarters." } }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -150,7 +167,9 @@
         </ul>
       </div>
       <div class="fade-in">
-        <img src="images/challenge-silos.png" alt="Disconnected data ecosystem — SAP, Oracle, Postgres, a data lake and files sitting in isolated silos, joined by broken connections, showing the systems don't talk to each other." style="width:100%;border-radius:12px;border:1px solid #ece6df;background:#fff;display:block;">
+        <div class="challenge-photo">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&h=760&fit=crop&q=80" alt="Enterprise data spread across many disconnected systems in a data centre." loading="lazy" decoding="async" width="900" height="760">
+        </div>
       </div>
     </div>
   </div>
@@ -417,6 +436,30 @@
         <h3>Any source to any target</h3>
         <p>SAP, Oracle and DB2 included, bidirectional, EU-hosted or on-premise with your own keys. One layer that lands the data, refines it Bronze → Silver → Gold, and serves it to your AI agents — with auditable lineage end to end.</p>
       </div>
+    </div>
+
+    <div class="sov-table-wrap fade-in">
+      <table class="sov-table">
+        <caption class="vh">How TVL Data Transfer compares with an in-house or open-source stack and a single-cloud service, capability by capability.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col">In-house / OSS stack</th>
+            <th scope="col">Single-cloud service</th>
+            <th scope="col" class="col-tvl">TVL Data Transfer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">EU, on-premise or air-gapped hosting</th><td><span class="cap-part">Partial</span></td><td><span class="cap-no">No</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">Customer-held keys, in your jurisdiction</th><td><span class="cap-part">Partial</span></td><td><span class="cap-no">No</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">SAP · Oracle · DB2 sources</th><td><span class="cap-part">Partial</span></td><td><span class="cap-part">Partial</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">Bidirectional &amp; multi-primary sync</th><td><span class="cap-no">DIY</span></td><td><span class="cap-no">No</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">In-flight transform, mask &amp; routing</th><td><span class="cap-part">Partial</span></td><td><span class="cap-part">Partial</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">Bronze → Silver → Gold refinement</th><td><span class="cap-part">Partial</span></td><td><span class="cap-part">Partial</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">Governed Gold served to AI agents (MCP)</th><td><span class="cap-no">No</span></td><td><span class="cap-part">Emerging</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+          <tr><th scope="row">Auditable lineage, end to end</th><td><span class="cap-part">Partial</span></td><td><span class="cap-part">Partial</span></td><td class="col-tvl"><span class="cap-yes">Yes</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

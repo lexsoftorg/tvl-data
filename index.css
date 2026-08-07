@@ -1551,3 +1551,91 @@
       .hero-architecture img.static { display: block; }
     }
     .hero-architecture img.static { display: none; }
+
+    /* ══════════════════════════════════════════════
+       STATE-OF-THE-ART PASS — photo, comparison table, a11y utils
+       ══════════════════════════════════════════════ */
+
+    /* Screen-reader-only utility */
+    .vh {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* ── CHALLENGE PHOTO (moody, brand-tinted) ── */
+    .challenge-photo {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(17,24,39,0.14);
+    }
+    .challenge-photo img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+    .challenge-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(125deg, rgba(255,73,49,0.42) 0%, rgba(15,15,15,0.60) 100%);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) { .challenge-photo img { height: 260px; } }
+
+    /* ── SOVEREIGNTY COMPARISON TABLE ── */
+    .sov-table-wrap {
+      margin-top: 44px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid #ece6df;
+      border-radius: 16px;
+      box-shadow: 0 18px 44px rgba(17,24,39,0.06);
+    }
+    .sov-table {
+      width: 100%;
+      min-width: 660px;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 14px;
+    }
+    .sov-table th, .sov-table td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid #f1ede8;
+      vertical-align: middle;
+    }
+    .sov-table thead th {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      color: var(--text);
+      background: #faf8f6;
+    }
+    .sov-table thead th.col-tvl { color: var(--red-dark); }
+    .sov-table th.col-tvl, .sov-table td.col-tvl { background: rgba(255,73,49,0.06); }
+    .sov-table tbody th[scope="row"] {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sov-table tbody tr:last-child th,
+    .sov-table tbody tr:last-child td { border-bottom: 0; }
+    .cap-yes, .cap-no, .cap-part {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .cap-yes  { background: rgba(255,73,49,0.13); color: var(--red-dark); }
+    .cap-part { background: #f1efe9; color: #736a5e; }
+    .cap-no   { background: #f2f2f2; color: #7c7c7c; }
+
+    /* ── A11y: darken the solid-red testimonial strip so white text passes AA ── */
+    .testimonial-strip { background: var(--red-dark); }

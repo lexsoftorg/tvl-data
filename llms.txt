@@ -1,0 +1,37 @@
+# TVL Data Transfer
+
+> The sovereign data layer for AI. TVL Data Transfer moves enterprise data from any source to any target and serves it to AI agents — governed, AI-ready, and sovereign. Built by TVL Tech (Luxembourg · Romania · United States).
+
+TVL Data Transfer captures changes from enterprise systems, refines them, and exposes governed data to AI agents through an MCP server. Data can stay in the EU or on-premise, under your own encryption keys, with auditable lineage end to end.
+
+## What it does
+- Change data capture (CDC) from SAP, Oracle, SQL Server, DB2, Postgres, data lakes and files — reads the change stream at commit, never scans whole tables, never rewrites your applications.
+- Lands data in any target you choose: a data lake, database or warehouse (BigQuery, Postgres, MySQL, MongoDB, and more).
+- Refines data in three layers — Bronze (raw, as it lands), Silver (cleaned and conformed), Gold (business-ready).
+- Serves the governed Gold tier to AI agents through an MCP server — curated data, not raw tables, with every answer traceable to auditable records.
+
+## Key capabilities
+- Bidirectional and multi-primary sync with deterministic conflict resolution (newer-wins, timestamp- or version-aware, or flagged for manual review).
+- In-flight transform, filter, mask, enrich, split and merge; rule-based routing by table, column, row or custom logic.
+- Transactional, resumable, throttled delivery. Peak sustained throughput 22,000 rows/second; scales from 2 to thousands of nodes.
+- Secure over HTTPS through firewalls; runs on-premise, in the cloud, or hybrid.
+
+## Sovereignty
+- Data stays in the EU, on-premise, air-gapped, or your own cloud — your architecture, your decision.
+- You hold the encryption keys, in your jurisdiction — not a vendor-owned control plane.
+- Auditable lineage end to end. Aligned with the EU AI Act, GDPR and Gaia-X.
+
+## In production
+- Romstal: agentic OCR routes products to AI agents and assigns SAP codes, fed by a Google Cloud data lake. Stack: Vertex AI, LangChain / LangGraph, Cloud Run.
+
+## Track record
+- TVL Tech: 100+ projects across 6 industries and 3 countries. The CTO designed and audited the smart contracts behind the EU's EBSI; the CEO scaled eMAG Marketplace to $1B ARR and sits in the European Commission's AI Group of Practice. NATO DIANA mentor and judge.
+
+## Engagement
+- Scoped pilot, framework contract, or managed service — a working pipeline on your own data in weeks, not quarters.
+
+## Links
+- English: https://data.tvl.tech/
+- Romanian: https://data.tvl.tech/ro/
+- Company: https://tvl.tech
+- Contact: sales@tvl.tech

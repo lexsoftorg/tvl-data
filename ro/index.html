@@ -57,6 +57,24 @@
     }
   }
   </script>
+
+  <!-- Date structurate FAQ (rich results + motoare AI) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ro",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ce surse și target-uri suportați?", "acceptedAnswer": { "@type": "Answer", "text": "Surse enterprise precum SAP, Oracle, SQL Server, DB2, Postgres, data lakes și fișiere, capturate log-based sau trigger-based. Target-urile le alegi tu — BigQuery, Postgres, MySQL, MongoDB și alte lake-uri, baze de date și warehouse-uri — rafinate Bronze, Silver, Gold. Din orice sursă către orice target." } },
+      { "@type": "Question", "name": "Ne perturbă sistemele sursă?", "acceptedAnswer": { "@type": "Answer", "text": "Nu. Citește din change stream în loc să scaneze tabele întregi și nu îți rescrie aplicațiile. Facem o încărcare curată a istoricului, apoi o sincronizare live continuă peste el, iar sistemele tale rulează în tot acest timp." } },
+      { "@type": "Question", "name": "Unde stau datele și cine deține cheile?", "acceptedAnswer": { "@type": "Answer", "text": "Unde decizi tu — regiuni UE, on-premise sau cloud-ul tău. Îți păstrezi infrastructura și cheile de criptare; noi operăm pipeline-ul, tu păstrezi controlul. Fiecare pas este logat pentru lineage complet și auditabil." } },
+      { "@type": "Question", "name": "Cum consumă agenții AI datele?", "acceptedAnswer": { "@type": "Answer", "text": "Printr-un server MCP, agenții tăi interoghează direct datele guvernate din stratul Gold. Rulează în SUA, în UE sau on-premise, iar fiecare răspuns este trasabil la înregistrări reale, pregătite și auditabile." } },
+      { "@type": "Question", "name": "Este fiabil la scală?", "acceptedAnswer": { "@type": "Answer", "text": "Fiecare batch este urmărit într-o tranzacție și reîncercat prin întreruperi, așa că livrarea reia de unde s-a oprit, fără nimic pierdut. Throughput-ul maxim susținut pe deployment-ul de referință este de 22.000 rânduri pe secundă și scalează de la 2 la mii de noduri." } },
+      { "@type": "Question", "name": "Se poate sincroniza în ambele direcții fără ca datele să se ciocnească?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Pipeline-ul rulează bidirecțional și multi-primary, așa că mai multe sisteme pot scrie simultan. Conflictele sunt detectate pe cheia primară, pe datele modificate sau pe o coloană de timestamp ori versiune, apoi rezolvate cu o strategie deterministă — newer-wins, sau marcate pentru revizuire manuală — iar tu stabilești regula per tabel." } },
+      { "@type": "Question", "name": "Cum începem — migrare sau sincronizare continuă?", "acceptedAnswer": { "@type": "Answer", "text": "Oricare. Delimităm, construim și operăm pipeline-ul cap la cap: o migrare unică de pe un sistem legacy, o sincronizare continuă între platforme sau un strat de integrare permanent. Spune-ne cele două sisteme și ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre." } }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="../index.css">
 </head>
 <body>
@@ -150,7 +168,9 @@
         </ul>
       </div>
       <div class="fade-in">
-        <img src="../images/challenge-silos.png" alt="Ecosistem de date deconectat — SAP, Oracle, Postgres, un data lake și fișiere în siloz-uri izolate, unite prin conexiuni întrerupte, arătând că sistemele nu comunică între ele." style="width:100%;border-radius:12px;border:1px solid #ece6df;background:#fff;display:block;">
+        <div class="challenge-photo">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&h=760&fit=crop&q=80" alt="Date enterprise răspândite în multe sisteme deconectate, într-un data center." loading="lazy" decoding="async" width="900" height="760">
+        </div>
       </div>
     </div>
   </div>
@@ -417,6 +437,30 @@
         <h3>Din orice sursă către orice target</h3>
         <p>Inclusiv SAP, Oracle și DB2, bidirecțional, găzduit în UE sau on-premise, cu cheile tale. Un singur strat care aduce datele, le rafinează Bronze → Silver → Gold și le servește agenților tăi AI — cu lineage auditabil cap la cap.</p>
       </div>
+    </div>
+
+    <div class="sov-table-wrap fade-in">
+      <table class="sov-table">
+        <caption class="vh">Cum se compară TVL Data Transfer cu un stack in-house sau open-source și cu un serviciu într-un singur cloud, capabilitate cu capabilitate.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capabilitate</th>
+            <th scope="col">Stack in-house / OSS</th>
+            <th scope="col">Serviciu într-un singur cloud</th>
+            <th scope="col" class="col-tvl">TVL Data Transfer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Găzduire în UE, on-premise sau air-gapped</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-no">Nu</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Chei deținute de client, în jurisdicția ta</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-no">Nu</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Surse SAP · Oracle · DB2</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-part">Parțial</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Sincronizare bidirecțională și multi-primary</th><td><span class="cap-no">DIY</span></td><td><span class="cap-no">Nu</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Transformare, mascare și rutare din zbor</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-part">Parțial</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Rafinare Bronze → Silver → Gold</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-part">Parțial</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Gold guvernat servit agenților AI (MCP)</th><td><span class="cap-no">Nu</span></td><td><span class="cap-part">Emergent</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+          <tr><th scope="row">Lineage auditabil, cap la cap</th><td><span class="cap-part">Parțial</span></td><td><span class="cap-part">Parțial</span></td><td class="col-tvl"><span class="cap-yes">Da</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
