@@ -1493,3 +1493,61 @@
       .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px 16px; padding-top: 22px; }
       .hero-btns { flex-direction: column; align-items: center; }
     }
+
+    /* ══════════════════════════════════════════════
+       ACCESSIBILITY
+       ══════════════════════════════════════════════ */
+
+    /* Skip-to-content link (visible only on keyboard focus) */
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      background: var(--red-dark);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      z-index: 3000;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* Visible keyboard focus indicator */
+    a:focus-visible,
+    button:focus-visible,
+    .faq-question:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid var(--red-dark);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ── Contrast fixes (meet WCAG AA 4.5:1 for text) ── */
+    /* Muted greys were #888 / #aaa (~3.5:1) → darken */
+    .hero-stat .lbl { color: #5e5e5e; }
+    footer p, footer a { color: #5e5e5e; }
+    .ba-tag.before { color: #6b6b6b; }
+    /* Small red labels: brand red #ff4a3d is only ~3.3:1 on white → use darker red */
+    .red-label, .sprint-mini-label, .hero-label { color: var(--red-dark); }
+    .hero-label::before { background: rgba(214,58,42,0.5); }
+    .hero-label::after { border-color: rgba(214,58,42,0.6); }
+    /* red-light text failed on light backgrounds */
+    .step-result { color: #8f2718; }
+    /* White-on-red text: darken interactive red backgrounds to #d63a2a (4.68:1) */
+    .btn-primary, .btn-nav, .btn-submit { background: var(--red-dark); }
+    .btn-primary:hover, .btn-nav:hover, .btn-submit:hover { background: #b5311f; }
+    .compare-card .compare-badge { background: var(--red-dark); }
+    /* On the solid-red testimonial strip, lift white text to full opacity */
+    .testimonial-kicker { color: rgba(255,255,255,0.95); }
+    .testimonial-inner cite { color: #ffffff; }
+
+    /* Respect reduced-motion for the animated architecture GIF */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-architecture img.motion { display: none; }
+      .hero-architecture img.static { display: block; }
+    }
+    .hero-architecture img.static { display: none; }

@@ -56,6 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Accessibility: hide decorative inline SVG icons and glyph characters from
+  // screen readers (they're all illustrative — text labels carry the meaning).
+  document.querySelectorAll('svg').forEach(s => {
+    s.setAttribute('aria-hidden', 'true');
+    s.setAttribute('focusable', 'false');
+  });
+  document.querySelectorAll('.flow-arrow, .cap-check, .faq-icon').forEach(el => {
+    el.setAttribute('aria-hidden', 'true');
+  });
+
   // Email anti-obfuscation (handles every #emailLink* span on the page)
   const e = 'sales' + '@' + 'tvl' + '.' + 'tech';
   document.querySelectorAll('[id^="emailLink"]').forEach(el => {

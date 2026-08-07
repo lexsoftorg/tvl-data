@@ -61,8 +61,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Sari la conținut</a>
+
 <!-- ── NAV ── -->
-<nav>
+<nav aria-label="Principal">
   <a class="nav-logo" href="#">
     <svg height="40" width="36" viewBox="107 107 786 786" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M892.95 447.19L552.77 107.06V106.92H106.92V552.81L447.19 893.07H893.08L892.95 447.18V447.19ZM868.91 447.19H552.78V131.19L868.91 447.18V447.19ZM123.99 123.99H535.71V447.19H447.19V535.75H123.99V123.99ZM535.71 464.25V535.75H464.25V464.25H535.71ZM131.04 552.81H447.19V868.94L131.04 552.81ZM876.01 876.01H464.25V552.81H552.77V464.25H876.01V876.01Z" fill="#FF4931"/>
@@ -85,13 +87,15 @@
     <a href="#how">Cum funcționează</a>
     <a href="#sources">Surse</a>
     <a href="#reliability">Fiabilitate</a>
-    <span class="lang-toggle">
-      <a href="/">EN</a>
-      <a href="/ro/" class="active">RO</a>
+    <span class="lang-toggle" role="group" aria-label="Limbă">
+      <a href="/" hreflang="en" aria-label="Switch to English">EN</a>
+      <a href="/ro/" class="active" hreflang="ro" aria-current="true">RO</a>
     </span>
     <a href="#contact" class="btn-nav">Programează o discuție</a>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -104,7 +108,8 @@
       <a href="#how" class="btn-ghost">Vezi cum funcționează</a>
     </div>
     <figure class="hero-architecture">
-      <img src="../images/architecture.gif" width="1280" height="720" alt="Arhitectura TVL Data Transfer — sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
+      <img class="motion" src="../images/architecture.gif" width="1280" height="720" alt="Arhitectura TVL Data Transfer — sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
+      <img class="static" src="../images/architecture-static.png" width="1280" height="720" alt="Arhitectura TVL Data Transfer — sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
     </figure>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -538,6 +543,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ── FOOTER ── -->
 <footer>
