@@ -210,13 +210,13 @@
       <div class="step-card fade-in">
         <div class="step-num">02</div>
         <h3>Direcționează</h3>
-        <p>Reguli decid ce merge unde. Datele sunt filtrate, subsetate și transformate din zbor, astfel încât fiecare target primește exact forma de care are nevoie — până la nivel de tabel, coloană, rând și direcție.</p>
+        <p>Reguli decid ce merge unde — după tabel, coloană, rând sau logică proprie. Din zbor, datele sunt filtrate, mapate, mascate, îmbogățite și divizate sau combinate, cu lookup-uri SQL și reguli scriptate, astfel încât fiecare target primește exact forma de care are nevoie.</p>
         <div class="step-result">✓ Fiecare target primește exact datele necesare</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">03</div>
         <h3>Livrează</h3>
-        <p>Modificările ajung asincron, în batch-uri comprimate, și sunt aplicate în ordine tranzacțională corectă — cu retry automat dacă rețeaua cade, astfel încât livrarea reia exact de unde s-a oprit.</p>
+        <p>Modificările sunt grupate în canale, puse în batch-uri comprimate, apoi aplicate în ordine tranzacțională corectă. Traficul este limitat ca să protejeze rețeaua, iar fiecare batch este urmărit, astfel încât livrarea reia exact de unde s-a oprit după o întrerupere.</p>
         <div class="step-result">✓ Ordine corectă, nimic pierdut</div>
       </div>
     </div>
@@ -317,14 +317,16 @@
       <p>Control la nivel de tabel: sincronizezi un tabel într-o direcție și altul în ambele, în același pipeline. Alegi coloanele, rândurile și direcția per tabel.</p>
     </div>
     <div class="capability-grid fade-in">
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Change data capture (CDC)</strong> — citește change stream-ul în momentul commit-ului</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Bidirecțional și multi-primary</strong> — sincronizare în ambele sensuri, mai mulți writeri</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transformă și filtrează din zbor</strong> — remodelează datele înainte să ajungă</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Rezolvarea conflictelor</strong> — reguli deterministe pentru scrieri concurente</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Securizat prin HTTPS</strong> — trece prin firewall, fără porturi deschise</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Near real-time sau programat</strong> — flux continuu sau la un interval</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>On-premise, cloud sau hibrid</strong> — rulează oriunde este estate-ul tău</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Scalează de la 2 la mii de noduri</strong> — același pipeline, orice dimensiune</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Change data capture (CDC)</strong> — citește change stream-ul la commit, fără să scaneze tabele întregi</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Bidirecțional și multi-primary</strong> — sincronizare în ambele sensuri, mai mulți writeri simultan</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transformă, filtrează și maschează din zbor</strong> — mapează, îmbogățește, divizează sau combină rânduri și coloane</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Lookup-uri SQL și reguli scriptate</strong> — îmbogățește sau remodelează cu logică proprie, per tabel</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Rezolvare deterministă a conflictelor</strong> — newer-wins, în funcție de timestamp sau versiune, ori marcat pentru revizuire manuală</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Rutare pe bază de reguli</strong> — după tabel, coloană, rând sau logică proprie</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Livrare tranzacțională, reluabilă</strong> — batch-uri comprimate, aplicate în ordinea commit-ului, cu throttling</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Securizat prin HTTPS</strong> — trece prin firewall, fără porturi de bază de date deschise</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Near real-time sau programat</strong> — push sau pull peste WAN și LAN, ori la un interval</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>On-premise, cloud sau hibrid</strong> — scalează de la 2 la mii de noduri</span></div>
     </div>
   </div>
 </section>
@@ -517,6 +519,13 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">Fiecare batch este urmărit într-o tranzacție și reîncercat prin întreruperi, așa că livrarea reia de unde s-a oprit, fără nimic pierdut. Throughput-ul maxim susținut pe deployment-ul de referință este de 22.000 rânduri/secundă și scalează de la 2 la mii de noduri.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Se poate sincroniza în ambele direcții fără ca datele să se ciocnească?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Da. Pipeline-ul rulează bidirecțional și multi-primary, așa că mai multe sisteme pot scrie simultan. Conflictele sunt detectate pe cheia primară, pe datele modificate sau pe o coloană de timestamp ori versiune, apoi rezolvate cu o strategie deterministă — newer-wins, sau marcate pentru revizuire manuală — iar tu stabilești regula per tabel.</div>
       </div>
       <div class="faq-item fade-in">
         <button class="faq-question" type="button">

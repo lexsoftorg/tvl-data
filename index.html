@@ -210,13 +210,13 @@
       <div class="step-card fade-in">
         <div class="step-num">02</div>
         <h3>Route</h3>
-        <p>Rules decide what goes where. Data is subset, filtered and transformed in flight, so each target receives exactly the shape it needs — down to the table, column, row and direction.</p>
+        <p>Rules decide what goes where — by table, column, row or custom logic. In flight, data is filtered, mapped, masked, enriched, and split or merged, with SQL lookups and scripted rules, so each target receives exactly the shape it needs.</p>
         <div class="step-result">✓ Each target gets exactly the data it needs</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">03</div>
         <h3>Deliver</h3>
-        <p>Changes arrive asynchronously, batched and compressed, and are applied in correct transactional order — with automatic retry if the network drops, so delivery resumes where it stopped.</p>
+        <p>Changes are grouped into channels, batched and compressed, then applied in the correct transactional order. Traffic is throttled to protect the network, and every batch is tracked, so delivery resumes exactly where it stopped after an outage.</p>
         <div class="step-result">✓ Correct order, nothing dropped</div>
       </div>
     </div>
@@ -317,14 +317,16 @@
       <p>Table-level control: sync one table in one direction and another in both, inside the same pipeline. Pick the columns, rows and direction per table.</p>
     </div>
     <div class="capability-grid fade-in">
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Change data capture (CDC)</strong> — reads the change stream as it commits</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Bidirectional & multi-primary</strong> — sync both ways, many writers</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transform & filter in flight</strong> — reshape data before it lands</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Conflict resolution</strong> — deterministic rules for concurrent writes</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Secure over HTTPS</strong> — safe through firewalls, no open ports</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Near real-time or scheduled</strong> — continuous feed or on a cadence</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>On-premises, cloud or hybrid</strong> — runs wherever your estate does</span></div>
-      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Scales from 2 to thousands of nodes</strong> — same pipeline, any size</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Change data capture (CDC)</strong> — reads the change stream at commit, never scans whole tables</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Bidirectional &amp; multi-primary</strong> — sync both ways, many writers at once</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transform, filter &amp; mask in flight</strong> — map, enrich, split or merge rows and columns</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>SQL lookups &amp; scripted rules</strong> — enrich or reshape with custom logic per table</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Deterministic conflict resolution</strong> — newer-wins, timestamp- or version-aware, or flagged for manual review</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Rule-based routing</strong> — by table, column, row or custom logic</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transactional, resumable delivery</strong> — batched, compressed, applied in commit order, throttled</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Secure over HTTPS</strong> — safe through firewalls, no open database ports</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Near real-time or scheduled</strong> — push or pull across WAN and LAN, or on a cadence</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>On-premises, cloud or hybrid</strong> — scales from 2 to thousands of nodes</span></div>
     </div>
   </div>
 </section>
@@ -517,6 +519,13 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">Every batch is tracked in a transaction and retried through outages, so delivery resumes where it stopped with nothing dropped. Peak sustained throughput on our reference deployment is 22,000 rows/second, and it scales from 2 to thousands of nodes.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Can it sync in both directions without data clashing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Yes. The pipeline runs bidirectional and multi-primary, so several systems can write at once. Conflicts are detected on the primary key, changed data, or a timestamp or version column, then resolved with a deterministic strategy — newer-wins, or flagged for manual review — and you set the rule per table.</div>
       </div>
       <div class="faq-item fade-in">
         <button class="faq-question" type="button">
