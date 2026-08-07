@@ -5,16 +5,19 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4a3d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>TVL Data Transfer | The Sovereign Data Layer for AI</title>
   <meta name="description" content="Move enterprise data from any source to any AI agent, governed and ready for AI. Change data capture into your data lake, database or warehouse, refined across Bronze, Silver and Gold, queried through an MCP server. Keep it sovereign: EU, on premise or your own cloud.">
   <meta property="og:title" content="TVL Data Transfer: The Sovereign Data Layer for AI">
   <meta property="og:description" content="Any source to any AI agent, governed and ready. CDC into your lake, database or warehouse, refined and auditable, queried through an MCP server. EU AI Act and GDPR aligned.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data.tvl.tech/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="TVL Data Transfer, the sovereign data layer for AI">
+  <meta property="og:image" content="https://data.tvl.tech/images/architecture-static.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="TVL Data Transfer architecture: enterprise sources through the engine into your target, served to AI agents via an MCP server.">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ro_RO">
   <meta property="og:site_name" content="TVL Data Transfer">
@@ -23,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TVL Data Transfer: The Sovereign Data Layer for AI">
   <meta name="twitter:description" content="Any source to any AI agent, governed and ready. CDC into your lake, database or warehouse, refined and auditable, queried through an MCP server.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+  <meta name="twitter:image" content="https://data.tvl.tech/images/architecture-static.png">
 
   <!-- Canonical + alternates -->
   <link rel="canonical" href="https://data.tvl.tech/">
@@ -32,7 +35,7 @@
   <link rel="alternate" hreflang="x-default" href="https://data.tvl.tech/">
 
   <!-- Robots -->
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="TVL Tech">
 
   <!-- Schema.org JSON-LD -->
@@ -72,6 +75,20 @@
       { "@type": "Question", "name": "Can it sync in both directions without data clashing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The pipeline runs bidirectional and multi primary, so several systems can write at once. Conflicts are detected on the primary key, changed data, or a timestamp or version column, then resolved with a deterministic strategy such as newer wins, or flagged for manual review, and you set the rule per table." } },
       { "@type": "Question", "name": "How do we start, with a migration or continuous sync?", "acceptedAnswer": { "@type": "Answer", "text": "Either. We scope, build and operate the pipeline end to end: a single migration off a legacy system, a continuous sync between platforms, or a permanent integration layer. Tell us the two systems and we stand up a working pipeline on your own data in weeks, not quarters." } }
     ]
+  }
+  </script>
+
+  <!-- Organization (entity grounding for search + AI answer engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TVL Tech",
+    "url": "https://tvl.tech/",
+    "logo": "https://data.tvl.tech/favicon.svg",
+    "description": "TVL Tech builds the sovereign data layer for AI: it moves enterprise data from any source to any target and serves it to AI agents, governed and ready, in the EU or on premise.",
+    "areaServed": ["Luxembourg", "Romania", "United States", "European Union"],
+    "knowsAbout": ["change data capture", "data sovereignty", "EU AI Act", "Model Context Protocol", "data lakes", "BigQuery", "AI agents"]
   }
   </script>
   <link rel="stylesheet" href="index.css">

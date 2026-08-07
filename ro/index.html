@@ -5,16 +5,19 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4a3d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>TVL Data Transfer | Stratul de date suveran pentru AI</title>
   <meta name="description" content="Mută datele enterprise din orice sursă către orice agent AI, guvernate și pregătite pentru AI. Change data capture în data lake-ul, baza de date sau warehouse-ul tău, rafinate în Bronze, Silver și Gold, interogate printr-un server MCP. Păstrează-le suverane: în UE, on premise sau în cloud-ul tău.">
   <meta property="og:title" content="TVL Data Transfer: Stratul de date suveran pentru AI">
   <meta property="og:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în lake-ul, baza de date sau warehouse-ul tău, rafinate și auditabile, interogate printr-un server MCP. Aliniat la EU AI Act și GDPR.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data.tvl.tech/ro/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="TVL Data Transfer, stratul de date suveran pentru AI">
+  <meta property="og:image" content="https://data.tvl.tech/images/architecture-static.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="Arhitectura TVL Data Transfer: surse enterprise prin motor către target-ul tău, servite agenților AI printr-un server MCP.">
   <meta property="og:locale" content="ro_RO">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="TVL Data Transfer">
@@ -23,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TVL Data Transfer: Stratul de date suveran pentru AI">
   <meta name="twitter:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în lake-ul, baza de date sau warehouse-ul tău, rafinate și auditabile, interogate printr-un server MCP.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+  <meta name="twitter:image" content="https://data.tvl.tech/images/architecture-static.png">
 
   <!-- Canonical + alternates -->
   <link rel="canonical" href="https://data.tvl.tech/ro/">
@@ -32,7 +35,7 @@
   <link rel="alternate" hreflang="x-default" href="https://data.tvl.tech/">
 
   <!-- Robots -->
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="TVL Tech">
 
   <!-- Schema.org JSON-LD -->
@@ -73,6 +76,20 @@
       { "@type": "Question", "name": "Se poate sincroniza în ambele direcții fără ca datele să se ciocnească?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Pipeline-ul rulează bidirecțional și multi primary, așa că mai multe sisteme pot scrie simultan. Conflictele sunt detectate pe cheia primară, pe datele modificate sau pe o coloană de timestamp ori versiune, apoi rezolvate cu o strategie deterministă precum newer wins, ori marcate pentru revizuire manuală, iar tu stabilești regula per tabel." } },
       { "@type": "Question", "name": "Cum începem, cu o migrare sau sincronizare continuă?", "acceptedAnswer": { "@type": "Answer", "text": "Oricare. Delimităm, construim și operăm pipeline-ul cap la cap: o migrare unică de pe un sistem legacy, o sincronizare continuă între platforme sau un strat de integrare permanent. Spune-ne cele două sisteme și ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre." } }
     ]
+  }
+  </script>
+
+  <!-- Organization (entity grounding for search + AI answer engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TVL Tech",
+    "url": "https://tvl.tech/",
+    "logo": "https://data.tvl.tech/favicon.svg",
+    "description": "TVL Tech construiește stratul de date suveran pentru AI: mută datele enterprise din orice sursă către orice target și le servește agenților AI, guvernate și pregătite, în UE sau on premise.",
+    "areaServed": ["Luxembourg", "Romania", "United States", "European Union"],
+    "knowsAbout": ["change data capture", "data sovereignty", "EU AI Act", "Model Context Protocol", "data lakes", "BigQuery", "AI agents"]
   }
   </script>
   <link rel="stylesheet" href="../index.css">
