@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TVL Data Transfer | The Sovereign Data Layer for AI</title>
+  <meta name="description" content="Move enterprise data from any source to any AI agent — governed and AI-ready. Change data capture into Google BigQuery, refined Bronze → Silver → Gold, queried through an MCP server. Keep it sovereign: EU, on-premise or your own cloud.">
+  <meta property="og:title" content="TVL Data Transfer — The Sovereign Data Layer for AI">
+  <meta property="og:description" content="Any source to any AI agent, governed and ready. CDC into BigQuery, refined and auditable, queried through an MCP server. EU AI Act & GDPR aligned.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://data.tvl.tech/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TVL Data Transfer — the sovereign data layer for AI">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ro_RO">
+  <meta property="og:site_name" content="TVL Data Transfer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TVL Data Transfer — The Sovereign Data Layer for AI">
+  <meta name="twitter:description" content="Any source to any AI agent, governed and ready. CDC into BigQuery, refined and auditable, queried through an MCP server.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Canonical + alternates -->
+  <link rel="canonical" href="https://data.tvl.tech/">
+  <link rel="alternate" hreflang="en" href="https://data.tvl.tech/">
+  <link rel="alternate" hreflang="ro" href="https://data.tvl.tech/ro/">
+  <link rel="alternate" hreflang="x-default" href="https://data.tvl.tech/">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TVL Tech">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TVL Data Transfer",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Cloud, on-premise, hybrid",
+    "description": "The sovereign data layer for AI. Change data capture from enterprise sources into Google BigQuery, refined Bronze → Silver → Gold and queried by AI agents through an MCP server. EU AI Act and GDPR aligned.",
+    "provider": {
+      "@type": "Organization",
+      "name": "TVL Tech",
+      "url": "https://tvl.tech/",
+      "logo": "https://data.tvl.tech/favicon.svg",
+      "areaServed": ["LU", "RO", "US", "EU"]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="#">
+    <svg height="40" width="36" viewBox="107 107 786 786" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M892.95 447.19L552.77 107.06V106.92H106.92V552.81L447.19 893.07H893.08L892.95 447.18V447.19ZM868.91 447.19H552.78V131.19L868.91 447.18V447.19ZM123.99 123.99H535.71V447.19H447.19V535.75H123.99V123.99ZM535.71 464.25V535.75H464.25V464.25H535.71ZM131.04 552.81H447.19V868.94L131.04 552.81ZM876.01 876.01H464.25V552.81H552.77V464.25H876.01V876.01Z" fill="#FF4931"/>
+      <path d="M290.55 255.08V272.11H273.12V389.18H255.88V281.12L236.53 272.11V255.08H290.55Z" fill="#FF4931"/>
+      <path d="M366.8 255.08L346.7 389.18H321.03L300.92 255.08H318.53L329.85 330.57L331.7 342.92H336.02L337.88 330.57L349.19 255.08H366.8Z" fill="#FF4931"/>
+      <path d="M424.68 372.12V389.18H382.92V255.08H400.17V372.12H424.68Z" fill="#FF4931"/>
+      <path d="M552.77 641.5L572.22 650.55V759.11H589.54V658.63V641.5H607.06V624.37H552.77V641.5Z" fill="#FF4931"/>
+      <path d="M642.28 700.21H668.27V683.08H642.28L641.92 641.5H668.84V624.37H636.12H624.96V641.5V651.53V759.11H626.91H668.84H669.45V741.98H642.28V700.21Z" fill="#FF4931"/>
+      <path d="M687.35 741.98V759.11H729.89V741.98H704.67V641.5H729.89V624.37H687.35V741.98Z" fill="#FF4931"/>
+      <path d="M788.8 624.37V683.08H767.63V624.37H750.3V759.11H767.63V700.21H788.8V759.11H806.12V624.37H788.8Z" fill="#FF4931"/>
+    </svg>
+    <span class="nav-logo-text">DATA</span>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="https://tvl.tech" target="_blank" rel="noopener">TVL Tech</a>
+    <a href="#challenge">Challenge</a>
+    <a href="#how">How it works</a>
+    <a href="#sources">Sources</a>
+    <a href="#reliability">Reliability</a>
+    <span class="lang-toggle">
+      <a href="/" class="active">EN</a>
+      <a href="/ro/">RO</a>
+    </span>
+    <a href="#contact" class="btn-nav">Book a scoping call</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-label">Data Sovereignty · AI · TVL Tech</div>
+      <h1>We build the <span>Sovereign Data Layer</span> for AI</h1>
+      <p>We prepare enterprise data for AI — governed and ready.<br>Keep it sovereign when you need to, and run your AI wherever you choose.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Book a scoping call</a>
+        <a href="#how" class="btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">Any → Any</div>
+          <div class="lbl">Any source to any AI agent, through one layer</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">22,000</div>
+          <div class="lbl">Rows / second sustained on our reference deployment</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">EU · On-prem</div>
+          <div class="lbl">You choose where data lives and where AI runs</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">In production</div>
+          <div class="lbl">Live today, powering AI agents at Romstal</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-card">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80" alt="Enterprise data infrastructure">
+    </div>
+  </div>
+</section>
+
+<!-- ── THE CHALLENGE ── -->
+<section class="problema" id="challenge">
+  <div class="container">
+    <div class="two-col">
+      <div class="fade-in">
+        <span class="red-label">The challenge</span>
+        <h2 class="section-h2">AI needs your data. You set the rules.</h2>
+        <blockquote>
+          "Data is scattered across SAP, Oracle, Postgres, lakes and files<br>→ each system a silo<br>→ raw and inconsistent, not AI-ready<br>→ so your agents can't safely rely on it."
+        </blockquote>
+        <ul class="pain-list">
+          <li>Your data lives everywhere — dozens of systems that were never designed to talk to each other.</li>
+          <li>It arrives raw and inconsistent, so agents built on top of it produce answers you can't trust.</li>
+          <li>Where data lives and where AI runs is your decision — not a vendor's lock-in.</li>
+          <li>The EU AI Act and GDPR require residency, auditability and lineage you can prove.</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=700&h=520&fit=crop&q=80" alt="Fragmented enterprise systems" style="width:100%;height:360px;object-fit:cover;border-radius:8px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOVEREIGNTY ── -->
+<section class="de-ce-acum" id="sovereignty">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">Sovereignty, defined</span>
+      <h2 class="section-h2">Sovereign when you need it</h2>
+      <p>Sovereignty is a choice you architect. We build so data can stay in the EU or on-premise, aligned with the EU AI Act, GDPR and Gaia-X.</p>
+    </div>
+    <div class="urgenta-grid">
+      <div class="urgenta-card fade-in">
+        <h3>You choose where data lives</h3>
+        <p>EU regions, on-premise, or your own cloud. Your architecture, your decision — never forced into a single vendor's estate.</p>
+      </div>
+      <div class="urgenta-card fade-in">
+        <h3>You hold the keys</h3>
+        <p>Your infrastructure and your encryption keys. We operate the pipeline; you keep control of the data at every step.</p>
+      </div>
+      <div class="urgenta-card fade-in">
+        <h3>Auditable, end to end</h3>
+        <p>Every hop is logged and inspectable, for full lineage from source record to the answer an agent gives.</p>
+      </div>
+    </div>
+    <div class="standards-band fade-in">
+      <span class="standards-chip">EU AI Act</span>
+      <span class="standards-chip">GDPR</span>
+      <span class="standards-chip">Data residency</span>
+      <span class="standards-chip">Auditable lineage</span>
+      <span class="standards-chip">Encrypted in transit</span>
+      <span class="standards-chip">Gaia-X aligned</span>
+    </div>
+    <div class="urgenta-cta fade-in">
+      <a class="btn-primary" href="#contact">Talk to us about your sovereignty requirements</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="cum" id="how">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">How it works</span>
+      <h2 class="section-h2">Capture, route, deliver — in the right order</h2>
+      <p>A change-data-capture pipeline that never rewrites your applications and never scrapes whole tables.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-num">01</div>
+        <h3>Capture</h3>
+        <p>Every insert, update and delete is picked up as it commits. It reads from the change stream — log-based or trigger-based, whichever fits — not by scraping whole tables, and never rewrites your applications.</p>
+        <div class="step-result">✓ Source systems keep running, untouched</div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">02</div>
+        <h3>Route</h3>
+        <p>Rules decide what goes where. Data is subset, filtered and transformed in flight, so each target receives exactly the shape it needs — down to the table, column, row and direction.</p>
+        <div class="step-result">✓ Each target gets exactly the data it needs</div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">03</div>
+        <h3>Deliver</h3>
+        <p>Changes arrive asynchronously, batched and compressed, and are applied in correct transactional order — with automatic retry if the network drops, so delivery resumes where it stopped.</p>
+        <div class="step-result">✓ Correct order, nothing dropped</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOURCES TO BIGQUERY ── -->
+<section class="sprint-focus" id="sources">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <h2 class="section-h2">Enterprise sources into Google BigQuery</h2>
+      <p>One clean load of history, then a live feed. Your source systems keep running throughout.</p>
+    </div>
+
+    <div class="flow-diagram fade-in">
+      <div class="flow-node">
+        <div class="flow-kicker">Sources</div>
+        <div class="flow-title">Enterprise systems</div>
+        <div class="flow-sub">SAP tables, Oracle change logs, Postgres, files and more</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node is-core">
+        <div class="flow-kicker">Pipeline</div>
+        <div class="flow-title">TVL Data Transfer</div>
+        <div class="flow-sub">Log- or trigger-based capture, transformed in flight</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-kicker">Target</div>
+        <div class="flow-title">Google BigQuery</div>
+        <div class="flow-sub">Analytics-ready tables, keys and types preserved</div>
+      </div>
+    </div>
+
+    <div class="sprint-top-grid" style="grid-template-columns:1fr;margin-top:24px;">
+      <div class="sprint-overview-card fade-in">
+        <span class="sprint-mini-label">What lands in BigQuery</span>
+        <div class="sprint-overview-notes" style="margin-top:0;padding-top:0;border-top:0;">
+          <div class="sprint-overview-note">
+            <strong>Reads SAP tables, Oracle change logs and more</strong>
+            <p>Log-based or trigger-based capture, whichever fits the source.</p>
+          </div>
+          <div class="sprint-overview-note">
+            <strong>Preserves keys, data types and relationships</strong>
+            <p>Your model arrives intact, not flattened into a dump.</p>
+          </div>
+          <div class="sprint-overview-note">
+            <strong>Bulk load for history, then continuous sync</strong>
+            <p>One clean backfill, then a live change feed on top.</p>
+          </div>
+          <div class="sprint-overview-note">
+            <strong>Lands analytics-ready tables in BigQuery</strong>
+            <p>Ready for refinement, reporting and AI agents.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DATA REFINEMENT (MEDALLION) ── -->
+<section class="cum" id="refinement" style="background:#fff;">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">Data refinement</span>
+      <h2 class="section-h2">From raw to ready, in three layers</h2>
+      <p>Every layer lives in BigQuery — versioned and auditable.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card tier-bronze fade-in">
+        <div class="step-num">01</div>
+        <span class="tier-badge">Bronze</span>
+        <h3>Raw, as it lands</h3>
+        <p>Every source record captured exactly as it arrives, nothing lost. The immutable record of what happened.</p>
+      </div>
+      <div class="step-card tier-silver fade-in">
+        <div class="step-num">02</div>
+        <span class="tier-badge">Silver</span>
+        <h3>Cleaned and conformed</h3>
+        <p>Deduplicated, typed and joined into one consistent model across every source system.</p>
+      </div>
+      <div class="step-card tier-gold fade-in">
+        <div class="step-num">03</div>
+        <span class="tier-badge">Gold</span>
+        <h3>Business ready</h3>
+        <p>Aggregated, modelled tables for analytics, reporting — and the answers your AI agents give.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT IT HANDLES ── -->
+<section class="customizat" id="capabilities">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">What it handles</span>
+      <h2 class="section-h2">Built for complex, real-world estates</h2>
+      <p>Table-level control: sync one table in one direction and another in both, inside the same pipeline. Pick the columns, rows and direction per table.</p>
+    </div>
+    <div class="capability-grid fade-in">
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Change data capture (CDC)</strong> — reads the change stream as it commits</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Bidirectional & multi-primary</strong> — sync both ways, many writers</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Transform & filter in flight</strong> — reshape data before it lands</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Conflict resolution</strong> — deterministic rules for concurrent writes</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Secure over HTTPS</strong> — safe through firewalls, no open ports</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Near real-time or scheduled</strong> — continuous feed or on a cadence</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>On-premises, cloud or hybrid</strong> — runs wherever your estate does</span></div>
+      <div class="capability-item"><span class="cap-check">✓</span><span><strong>Scales from 2 to thousands of nodes</strong> — same pipeline, any size</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELIABILITY & SCALE ── -->
+<section class="de-ce" id="reliability">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">Reliability &amp; scale</span>
+      <h2 class="section-h2">Designed not to lose a row</h2>
+    </div>
+    <div class="metric-hero fade-in" style="margin-bottom:24px;">
+      <div>
+        <div class="metric-num">22,000</div>
+        <div class="metric-unit">rows / second</div>
+      </div>
+      <div class="metric-copy">
+        <h3>Peak sustained throughput</h3>
+        <p>Measured on our reference deployment. Parallel channels and clustered nodes move data fast, with proven deployments spanning thousands of nodes.</p>
+      </div>
+    </div>
+    <div class="urgenta-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="urgenta-card fade-in">
+        <h3>Durable by default</h3>
+        <p>Every batch is tracked in a transaction and retried through outages, so delivery resumes exactly where it stopped — with nothing dropped.</p>
+      </div>
+      <div class="urgenta-card fade-in">
+        <h3>Scales horizontally</h3>
+        <p>Parallel channels and clustered nodes move data fast, with proven deployments spanning thousands of nodes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI AGENTS AT WORK ── -->
+<section class="avantaje" id="agents">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">AI agents at work</span>
+      <h2 class="section-h2">Agents that answer from data you can trust</h2>
+      <p>Through an MCP server, your agents reach the Gold-tier data — governed and ready. Run them in the US, the EU or on-premise.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,73,49)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h5M8 16h6"/></svg>
+        </div>
+        <h3>Answer across every system</h3>
+        <p>Agents respond on real records unified from every source — not on stale exports or partial copies.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,73,49)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Draft quotes, assign SAP codes</h3>
+        <p>Automate the work that used to take a specialist — drafting quotes and assigning SAP codes directly from prepared data.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,73,49)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Every answer traceable</h3>
+        <p>Governed answers, not guesses — each one traceable to real, prepared, auditable data, wherever your AI runs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE COMPARE ── -->
+<section class="cum" id="compare" style="background:var(--light-bg);">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">How we compare</span>
+      <h2 class="section-h2">The same job, done three ways</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card fade-in">
+        <h3>In-house scripts</h3>
+        <p>Full control, but slow to build, brittle to maintain, and typically one way only. Every new source is another project.</p>
+      </div>
+      <div class="compare-card fade-in">
+        <h3>Single cloud service</h3>
+        <p>Fast to start, but locks you to one vendor and one estate. Your data — and your architecture — become theirs.</p>
+      </div>
+      <div class="compare-card is-winner fade-in">
+        <span class="compare-badge">TVL Data Transfer</span>
+        <h3>Any source to any target</h3>
+        <p>Portable, EU-hosted, and quick to first result. Sovereign by design, and it runs wherever your estate does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY / TESTIMONIAL ── -->
+<section class="testimonial-strip" id="case-study">
+  <div class="testimonial-inner fade-in">
+    <div class="testimonial-header">
+      <span class="testimonial-kicker">Case study · In production</span>
+      <h2>Romstal: unified data for AI agents</h2>
+      <img class="testimonial-logo" src="images/romstal-logo.png" alt="Romstal">
+    </div>
+    <blockquote>
+      "Agentic OCR routes products to AI agents and assigns SAP codes, fed by a Google Cloud data lake. Enterprise data moved into one AI-ready layer — faster quoting at lower cost, new salespeople ramping up quickly, and one unified data source for every AI agent."
+    </blockquote>
+    <cite>— Live in production · Vertex AI · LangChain / LangGraph · Cloud Run</cite>
+  </div>
+</section>
+
+<!-- ── TRACK RECORD ── -->
+<section class="trainer" id="track-record">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">Track record</span>
+      <h2 class="section-h2" style="text-align:center;">Proven for the European Commission</h2>
+    </div>
+    <div class="record-band fade-in">
+      <div class="record-stat">
+        <div class="num">100+</div>
+        <div class="lbl">Projects delivered</div>
+      </div>
+      <div class="record-stat">
+        <div class="num">6</div>
+        <div class="lbl">Industries</div>
+      </div>
+      <div class="record-stat">
+        <div class="num">3</div>
+        <div class="lbl">Countries · LU, RO, US</div>
+      </div>
+      <div class="record-stat">
+        <div class="num">30</div>
+        <div class="lbl">Person team across AI, blockchain and data</div>
+      </div>
+    </div>
+    <div class="urgenta-grid">
+      <div class="urgenta-card fade-in">
+        <h3>EBSI, for the European Commission</h3>
+        <p>Our CTO designed and audited the smart contracts behind the EU's European Blockchain Services Infrastructure.</p>
+      </div>
+      <div class="urgenta-card fade-in">
+        <h3>Enterprise scale</h3>
+        <p>Our CEO scaled eMAG Marketplace to $1B ARR, and sits in the European Commission's AI Group of Practice.</p>
+      </div>
+      <div class="urgenta-card fade-in">
+        <h3>Trusted &amp; recognised</h3>
+        <p>Trusted by DataDiggers and Romstal. NATO DIANA mentor and judge. A senior, international team in Luxembourg, Romania and the US.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq">
+  <div class="container">
+    <div class="section-title-center fade-in">
+      <span class="red-label">FAQ</span>
+      <h2 class="section-h2">Questions? We have answers.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Which sources and targets do you support?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Enterprise sources such as SAP, Oracle, Postgres, data lakes and files, captured log-based or trigger-based. The primary target is Google BigQuery, refined Bronze → Silver → Gold, but the pipeline moves any source to any target.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Does it disrupt our source systems?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">No. It reads from the change stream rather than scraping whole tables, and never rewrites your applications. We do one clean bulk load of history, then a continuous live sync on top — your systems keep running throughout.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Where does our data live, and who holds the keys?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Wherever you decide — EU regions, on-premise, or your own cloud. You keep your infrastructure and your encryption keys; we operate the pipeline while you keep control. Every hop is logged for full, auditable lineage.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          How do AI agents consume the data?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Through an MCP server, your agents query the governed Gold-tier data directly. They run in the US, the EU or on-premise, and every answer is traceable to real, prepared, auditable records.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Is it reliable at scale?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Every batch is tracked in a transaction and retried through outages, so delivery resumes where it stopped with nothing dropped. Peak sustained throughput on our reference deployment is 22,000 rows/second, and it scales from 2 to thousands of nodes.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          How do we start — migration or continuous sync?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Either. We scope, build and operate the pipeline end to end: a single migration off a legacy system, a continuous sync between platforms, or a permanent integration layer. Tell us the two systems and we stand up a working pipeline on your own data in weeks, not quarters.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA + FORM ── -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Let's move your data</h2>
+      <p>Tell us the two systems. We'll stand up a working pipeline on your own data in weeks, not quarters — as a scoped pilot, a framework contract, or a managed service.</p>
+      <div class="contact-form-wrap">
+        <!-- Pipedrive Web Form — replace the data-pd-webforms URL below with the real TVL Data Transfer form -->
+        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/REPLACE_WITH_TVL_DATA_FORM_ID"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+        <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Prefer email? Write to <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="nav-logo" style="text-decoration:none;">
+        <svg height="48" width="43" viewBox="107 107 786 786" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M892.95 447.19L552.77 107.06V106.92H106.92V552.81L447.19 893.07H893.08L892.95 447.18V447.19ZM868.91 447.19H552.78V131.19L868.91 447.18V447.19ZM123.99 123.99H535.71V447.19H447.19V535.75H123.99V123.99ZM535.71 464.25V535.75H464.25V464.25H535.71ZM131.04 552.81H447.19V868.94L131.04 552.81ZM876.01 876.01H464.25V552.81H552.77V464.25H876.01V876.01Z" fill="#FF4931"/>
+          <path d="M290.55 255.08V272.11H273.12V389.18H255.88V281.12L236.53 272.11V255.08H290.55Z" fill="#FF4931"/>
+          <path d="M366.8 255.08L346.7 389.18H321.03L300.92 255.08H318.53L329.85 330.57L331.7 342.92H336.02L337.88 330.57L349.19 255.08H366.8Z" fill="#FF4931"/>
+          <path d="M424.68 372.12V389.18H382.92V255.08H400.17V372.12H424.68Z" fill="#FF4931"/>
+          <path d="M552.77 641.5L572.22 650.55V759.11H589.54V658.63V641.5H607.06V624.37H552.77V641.5Z" fill="#FF4931"/>
+          <path d="M642.28 700.21H668.27V683.08H642.28L641.92 641.5H668.84V624.37H636.12H624.96V641.5V651.53V759.11H626.91H668.84H669.45V741.98H642.28V700.21Z" fill="#FF4931"/>
+          <path d="M687.35 741.98V759.11H729.89V741.98H704.67V641.5H729.89V624.37H687.35V741.98Z" fill="#FF4931"/>
+          <path d="M788.8 624.37V683.08H767.63V624.37H750.3V759.11H767.63V700.21H788.8V759.11H806.12V624.37H788.8Z" fill="#FF4931"/>
+        </svg>
+        <span class="nav-logo-text">DATA</span>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+        <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end;">
+          <a href="https://tvl.tech" target="_blank" rel="noopener">TVL Tech</a>
+          <a href="#challenge">Challenge</a>
+          <a href="#how">How it works</a>
+          <a href="#reliability">Reliability</a>
+          <a href="#contact">Contact</a>
+          <a href="/ro/">Română</a>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end;">
+          <a href="https://www.tvl.tech/terms-and-conditions" target="_blank" rel="noopener">Terms</a>
+          <a href="https://www.tvl.tech/terms-and-conditions#Confidentialitate" target="_blank" rel="noopener">Privacy</a>
+        </div>
+        <p>© <span id="year"></span> TVL Tech · Luxembourg · Romania · United States · <span id="emailLink2" style="color:#888;cursor:pointer;"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="index.js"></script>
+</body>
+</html>
