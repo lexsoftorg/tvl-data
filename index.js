@@ -56,6 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Respect reduced-motion: stop the hero video autoplaying
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video.motion').forEach(v => {
+      v.removeAttribute('autoplay');
+      v.pause();
+    });
+  }
+
   // Accessibility: hide decorative inline SVG icons and glyph characters from
   // screen readers (they're all illustrative — text labels carry the meaning).
   document.querySelectorAll('svg').forEach(s => {

@@ -1471,7 +1471,8 @@
       overflow: hidden;
       padding: 12px;
     }
-    .hero-architecture img {
+    .hero-architecture img,
+    .hero-architecture video {
       display: block;
       width: 100%;
       height: auto;
@@ -1545,12 +1546,12 @@
     .testimonial-kicker { color: rgba(255,255,255,0.95); }
     .testimonial-inner cite { color: #ffffff; }
 
-    /* Respect reduced-motion for the animated architecture GIF */
+    /* Respect reduced-motion: show the static frame instead of the video */
     @media (prefers-reduced-motion: reduce) {
-      .hero-architecture img.motion { display: none; }
-      .hero-architecture img.static { display: block; }
+      .hero-architecture .motion { display: none; }
+      .hero-architecture .static { display: block; }
     }
-    .hero-architecture img.static { display: none; }
+    .hero-architecture .static { display: none; }
 
     /* ══════════════════════════════════════════════
        STATE-OF-THE-ART PASS — photo, comparison table, a11y utils

@@ -66,6 +66,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "en",
     "mainEntity": [
       { "@type": "Question", "name": "Which sources and targets do you support?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise sources such as SAP, Oracle, SQL Server, DB2, Postgres, data lakes and files, captured log based or trigger based. Targets are yours to choose: BigQuery, Postgres, MySQL, Oracle, Splunk, Elasticsearch and other lakes, databases and warehouses, refined across Bronze, Silver and Gold. Any source to any target." } },
       { "@type": "Question", "name": "Does it disrupt our source systems?", "acceptedAnswer": { "@type": "Answer", "text": "No. It reads from the change stream rather than scraping whole tables, and never rewrites your applications. We do one clean bulk load of history, then a continuous live sync on top, while your systems keep running throughout." } },
@@ -88,6 +89,7 @@
     "logo": "https://data.tvl.tech/favicon.svg",
     "description": "TVL Tech builds the sovereign data layer for AI: it moves enterprise data from any source to any target and serves it to AI agents, governed and ready, in the EU or on premise.",
     "areaServed": ["Luxembourg", "Romania", "United States", "European Union"],
+    "sameAs": ["https://tvltech.lu", "https://academy.tvl.tech"],
     "knowsAbout": ["change data capture", "data sovereignty", "EU AI Act", "Model Context Protocol", "data lakes", "BigQuery", "AI agents"]
   }
   </script>
@@ -142,7 +144,10 @@
       <a href="#how" class="btn-ghost">See how it works</a>
     </div>
     <figure class="hero-architecture">
-      <img class="motion" src="images/architecture.gif" width="1280" height="720" alt="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
+      <video class="motion" autoplay muted loop playsinline width="1280" height="720" poster="images/architecture-static.png" aria-label="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
+        <source src="images/architecture.webm" type="video/webm">
+        <source src="images/architecture.mp4" type="video/mp4">
+      </video>
       <img class="static" src="images/architecture-static.png" width="1280" height="720" alt="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
     </figure>
     <div class="hero-stats">
