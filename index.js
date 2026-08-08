@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Nav: frost/solid once the hero is scrolled past
+  const navEl = document.querySelector('nav');
+  if (navEl) {
+    const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 30);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   // Copyright dinamic
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
