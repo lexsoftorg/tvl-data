@@ -641,8 +641,8 @@
       <h2>Hai să-ți mutăm datele</h2>
       <p>Spune-ne cele două sisteme. Ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre, ca pilot delimitat, contract-cadru sau serviciu administrat.</p>
       <div class="contact-form-wrap">
-        <!-- Formular Pipedrive. Loaderul e injectat lazy (vezi index.js) când secțiunea se apropie de viewport, ca payload-ul reCAPTCHA/Pipedrive să nu stea pe critical path. Partajat cu formularul TVL Academy deocamdată. -->
-        <div class="pipedriveWebForms" id="pd-form" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"></div>
+        <!-- Formular izolat în /form.html și încărcat lazy: browserul aduce payload-ul reCAPTCHA/Pipedrive doar când iframe-ul se apropie de viewport, ținându-l în afara critical path-ului. -->
+        <iframe src="/form.html" loading="lazy" title="Formular de programare" style="width:100%;min-height:600px;border:0;display:block;"></iframe>
         <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Preferi email? Scrie-ne la <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
       </div>
     </div>

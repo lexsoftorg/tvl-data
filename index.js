@@ -8,29 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Defer the Pipedrive form (and its reCAPTCHA payload) until the contact
-  // section nears the viewport, keeping ~600KB of third-party JS off the
-  // critical path on first load.
-  const pdForm = document.getElementById('pd-form');
-  if (pdForm) {
-    let pdLoaded = false;
-    const loadPipedrive = () => {
-      if (pdLoaded) return;
-      pdLoaded = true;
-      const s = document.createElement('script');
-      s.src = 'https://webforms.pipedrive.com/f/loader';
-      document.body.appendChild(s);
-    };
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        if (entries.some(e => e.isIntersecting)) { loadPipedrive(); io.disconnect(); }
-      }, { rootMargin: '600px' });
-      io.observe(pdForm);
-    } else {
-      loadPipedrive();
-    }
-  }
-
   // Copyright dinamic
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

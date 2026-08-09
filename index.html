@@ -641,8 +641,8 @@
       <h2>Let's move your data</h2>
       <p>Tell us the two systems. We'll stand up a working pipeline on your own data in weeks, not quarters, as a scoped pilot, a framework contract or a managed service.</p>
       <div class="contact-form-wrap">
-        <!-- Pipedrive Web Form. Loader is injected lazily (see index.js) when the section nears the viewport, so its reCAPTCHA/Pipedrive payload stays off the critical path. Shared with the TVL Academy form for now. -->
-        <div class="pipedriveWebForms" id="pd-form" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"></div>
+        <!-- Booking form isolated in /form.html and lazy-loaded: the browser only fetches its reCAPTCHA/Pipedrive payload when this iframe nears the viewport, keeping it off the critical path. -->
+        <iframe src="/form.html" loading="lazy" title="Book a scoping call form" style="width:100%;min-height:600px;border:0;display:block;"></iframe>
         <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Prefer email? Write to <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
       </div>
     </div>
