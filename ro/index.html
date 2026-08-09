@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#ff4a3d">
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/images/architecture-static.webp" fetchpriority="high">
   <title>TVL Data Transfer | Stratul de date suveran pentru AI</title>
   <meta name="description" content="Mută datele enterprise din orice sursă către orice agent AI, guvernate și suverane. Change data capture în lake-ul, baza de date sau warehouse-ul tău, servite agenților prin MCP.">
   <meta property="og:title" content="TVL Data Transfer: Stratul de date suveran pentru AI">
@@ -159,11 +160,11 @@
       <a href="#how" class="btn-ghost">Vezi cum funcționează</a>
     </div>
     <figure class="hero-architecture">
-      <video class="motion" autoplay muted loop playsinline width="1280" height="720" poster="../images/architecture-static.png" aria-label="Arhitectura TVL Data Transfer: sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
+      <video class="motion" autoplay muted loop playsinline width="1280" height="720" poster="../images/architecture-static.webp" aria-label="Arhitectura TVL Data Transfer: sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
         <source src="../images/architecture.webm" type="video/webm">
         <source src="../images/architecture.mp4" type="video/mp4">
       </video>
-      <img class="static" src="../images/architecture-static.png" width="1280" height="720" alt="Arhitectura TVL Data Transfer: sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
+      <img class="static" src="../images/architecture-static.webp" width="1280" height="720" alt="Arhitectura TVL Data Transfer: sisteme sursă (SAP, Oracle, SQL Server, IBM DB2, API-uri, documente) trec prin motorul TVL Data Transfer către baze de date țintă (PostgreSQL, MySQL, MongoDB, BigQuery); un server MCP servește apoi datele către agenți AI.">
     </figure>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -521,7 +522,7 @@
     <div class="testimonial-header">
       <span class="testimonial-kicker">Studiu de caz · În producție</span>
       <h2>Romstal: date unificate pentru agenți AI</h2>
-      <img class="testimonial-logo" src="../images/romstal-logo.png" alt="Romstal">
+      <img class="testimonial-logo" src="../images/romstal-logo.webp" alt="Romstal" loading="lazy" width="150" height="40">
     </div>
     <blockquote>
       „OCR agentic direcționează produsele către agenți AI și le atribuie coduri SAP, alimentat de un data lake pe Google Cloud. Datele enterprise mutate într-un singur strat pregătit pentru AI, aducând ofertare mai rapidă la cost mai mic, oameni noi în vânzări care se acomodează repede și o singură sursă de date unificată pentru fiecare agent AI."
@@ -640,8 +641,8 @@
       <h2>Hai să-ți mutăm datele</h2>
       <p>Spune-ne cele două sisteme. Ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre, ca pilot delimitat, contract-cadru sau serviciu administrat.</p>
       <div class="contact-form-wrap">
-        <!-- Pipedrive Web Form. Partajat cu site-ul TVL Academy deocamdată; înlocuiește cu un formular dedicat TVL Data Transfer când e gata -->
-        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+        <!-- Formular Pipedrive. Loaderul e injectat lazy (vezi index.js) când secțiunea se apropie de viewport, ca payload-ul reCAPTCHA/Pipedrive să nu stea pe critical path. Partajat cu formularul TVL Academy deocamdată. -->
+        <div class="pipedriveWebForms" id="pd-form" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"></div>
         <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Preferi email? Scrie-ne la <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
       </div>
     </div>

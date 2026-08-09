@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#ff4a3d">
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/images/architecture-static.webp" fetchpriority="high">
   <title>TVL Data Transfer | The Sovereign Data Layer for AI</title>
   <meta name="description" content="Move enterprise data from any source to any AI agent, governed and sovereign. Change data capture into your lake, database or warehouse, served to agents via MCP.">
   <meta property="og:title" content="TVL Data Transfer: The Sovereign Data Layer for AI">
@@ -159,11 +160,11 @@
       <a href="#how" class="btn-ghost">See how it works</a>
     </div>
     <figure class="hero-architecture">
-      <video class="motion" autoplay muted loop playsinline width="1280" height="720" poster="images/architecture-static.png" aria-label="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
+      <video class="motion" autoplay muted loop playsinline width="1280" height="720" poster="images/architecture-static.webp" aria-label="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
         <source src="images/architecture.webm" type="video/webm">
         <source src="images/architecture.mp4" type="video/mp4">
       </video>
-      <img class="static" src="images/architecture-static.png" width="1280" height="720" alt="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
+      <img class="static" src="images/architecture-static.webp" width="1280" height="720" alt="TVL Data Transfer architecture: source systems (SAP, Oracle, SQL Server, IBM DB2, APIs, documents) flow through the TVL Data Transfer engine into target databases (PostgreSQL, MySQL, MongoDB, BigQuery); an MCP server then serves the data to AI agents.">
     </figure>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -521,7 +522,7 @@
     <div class="testimonial-header">
       <span class="testimonial-kicker">Case study · In production</span>
       <h2>Romstal: unified data for AI agents</h2>
-      <img class="testimonial-logo" src="images/romstal-logo.png" alt="Romstal">
+      <img class="testimonial-logo" src="images/romstal-logo.webp" alt="Romstal" loading="lazy" width="150" height="40">
     </div>
     <blockquote>
       "Agentic OCR routes products to AI agents and assigns SAP codes, fed by a Google Cloud data lake. Enterprise data moved into one layer ready for AI, bringing faster quoting at lower cost, new salespeople who ramp up quickly, and one unified data source for every AI agent."
@@ -640,8 +641,8 @@
       <h2>Let's move your data</h2>
       <p>Tell us the two systems. We'll stand up a working pipeline on your own data in weeks, not quarters, as a scoped pilot, a framework contract or a managed service.</p>
       <div class="contact-form-wrap">
-        <!-- Pipedrive Web Form. Shared with the TVL Academy site for now; swap in a dedicated TVL Data Transfer form when ready -->
-        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+        <!-- Pipedrive Web Form. Loader is injected lazily (see index.js) when the section nears the viewport, so its reCAPTCHA/Pipedrive payload stays off the critical path. Shared with the TVL Academy form for now. -->
+        <div class="pipedriveWebForms" id="pd-form" data-pd-webforms="https://webforms.pipedrive.com/f/6b1fXYajsDP2oiAXKxmof6PlTypa1S0aQ7geD0V1Bxa7UIvfPcmZ8yYHLxLXtPWSYj"></div>
         <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Prefer email? Write to <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
       </div>
     </div>
