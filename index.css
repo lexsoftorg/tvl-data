@@ -1993,3 +1993,19 @@
     /* ── Booking-form facade (click-to-load keeps third-party JS off load) ── */
     .form-facade{ text-align:center; padding:24px 10px 14px; }
     .form-facade p{ color:var(--text-sec); font-size:15px; line-height:1.6; max-width:46ch; margin:0 auto 20px; }
+
+    /* ── WORKS-WITH integrations grid ── */
+    .logo-grid{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+      max-width:880px; margin:44px auto 0;
+    }
+    .logo-chip{
+      display:inline-flex; align-items:center; gap:9px;
+      padding:12px 20px; border-radius:12px;
+      background:#fff; border:1px solid #ece7e1;
+      box-shadow:0 1px 2px rgba(17,12,11,0.04);
+      font-family:var(--font-display); font-weight:600; font-size:15px; color:#3a3632;
+      transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .logo-chip::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--red); opacity:.75; }
+    .logo-chip:hover{ transform:translateY(-2px); border-color:#e3dcd4; box-shadow:0 10px 24px rgba(17,12,11,0.08); }
