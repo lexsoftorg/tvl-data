@@ -516,21 +516,6 @@
   </div>
 </section>
 
-<!-- ── CASE STUDY / TESTIMONIAL ── -->
-<section class="testimonial-strip" id="case-study">
-  <div class="testimonial-inner fade-in">
-    <div class="testimonial-header">
-      <span class="testimonial-kicker">Case study · In production</span>
-      <h2>Romstal: unified data for AI agents</h2>
-      <img class="testimonial-logo" src="images/romstal-logo.webp" alt="Romstal" loading="lazy" width="150" height="40">
-    </div>
-    <blockquote>
-      "Agentic OCR routes products to AI agents and assigns SAP codes, fed by a Google Cloud data lake. Enterprise data moved into one layer ready for AI, bringing faster quoting at lower cost, new salespeople who ramp up quickly, and one unified data source for every AI agent."
-    </blockquote>
-    <cite>Live in production · Vertex AI · LangChain / LangGraph · Cloud Run</cite>
-  </div>
-</section>
-
 <!-- ── TRACK RECORD ── -->
 <section class="trainer" id="track-record">
   <div class="container">
@@ -641,8 +626,12 @@
       <h2>Let's move your data</h2>
       <p>Tell us the two systems. We'll stand up a working pipeline on your own data in weeks, not quarters, as a scoped pilot, a framework contract or a managed service.</p>
       <div class="contact-form-wrap">
-        <!-- Booking form isolated in /form.html and lazy-loaded: the browser only fetches its reCAPTCHA/Pipedrive payload when this iframe nears the viewport, keeping it off the critical path. -->
-        <iframe src="/form.html" loading="lazy" title="Book a scoping call form" style="width:100%;min-height:600px;border:0;display:block;"></iframe>
+        <!-- Click-to-load facade: the form (and its reCAPTCHA/Pipedrive payload in /form.html) only loads when the visitor opens it, keeping all third-party JS off the initial page. -->
+        <div class="form-facade" id="form-facade">
+          <p>Book a 30-minute scoping call. Tell us the two systems and we'll take it from there.</p>
+          <button type="button" class="btn-primary" id="load-form-btn">Open the booking form</button>
+        </div>
+        <iframe id="pd-iframe" data-src="/form.html" title="Book a scoping call form" style="width:100%;min-height:600px;border:0;display:none;"></iframe>
         <p style="margin-top:18px;font-size:14px;color:var(--text-sec);">Prefer email? Write to <span id="emailLink" style="color:var(--red);cursor:pointer;font-weight:600;"></span></p>
       </div>
     </div>

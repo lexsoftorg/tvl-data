@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  // Booking form: load /form.html (with its reCAPTCHA/Pipedrive payload) only
+  // when the visitor opens it, keeping all third-party JS off initial load.
+  const loadFormBtn = document.getElementById('load-form-btn');
+  const pdIframe = document.getElementById('pd-iframe');
+  if (loadFormBtn && pdIframe) {
+    loadFormBtn.addEventListener('click', () => {
+      pdIframe.src = pdIframe.dataset.src;
+      pdIframe.style.display = 'block';
+      const facade = document.getElementById('form-facade');
+      if (facade) facade.style.display = 'none';
+    });
+  }
+
   // Copyright dinamic
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

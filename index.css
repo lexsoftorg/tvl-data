@@ -1965,3 +1965,31 @@
     .pain-card p{ font-size:14.5px; color:var(--text-sec); line-height:1.62; }
     @media (max-width:1024px){ .pain-grid{ grid-template-columns:repeat(2,1fr); } }
     @media (max-width:600px){ .pain-grid{ grid-template-columns:1fr; } }
+
+    /* ═══════════════════════════════════════════════════════
+       CONTRAST FIXES — WCAG AA on every small text (Lighthouse a11y 100)
+       Deep-red "ink" for small red text on light tints; keep bright coral
+       for large/hero elements. Darken muted greys and tier labels.
+       ═══════════════════════════════════════════════════════ */
+    :root{ --red-ink:#b02616; }
+    .cred-label{ color:#6a645d; }
+    .red-label{ color:var(--red-ink); }
+    .sov-table thead th.col-tvl{ color:var(--red-ink); }
+    .cap-yes{ color:var(--red-ink); }
+    .cap-no{ color:#5c5c5c; }
+    #emailLink, #emailLink2{ color:var(--red-ink) !important; }
+    footer .nav-logo-text{ color:var(--red-ink); }
+    nav.scrolled .nav-logo-text{ color:var(--red-ink); }
+    .tier-bronze .tier-badge{ color:#8a531c; }
+    .tier-silver .tier-badge{ color:#565a61; }
+    .tier-gold .tier-badge{ color:#786012; }
+    .step-card.tier-silver .step-num{ color:#6b7078; }
+    .step-card.tier-gold .step-num{ color:#9c7d16; }
+    .testimonial-strip{ background:#c22b17; }
+    .testimonial-kicker{ color:#ffffff; }
+    .testimonial-inner blockquote{ color:#ffffff; }
+    .testimonial-inner cite{ color:#ffe1d9; }
+
+    /* ── Booking-form facade (click-to-load keeps third-party JS off load) ── */
+    .form-facade{ text-align:center; padding:24px 10px 14px; }
+    .form-facade p{ color:var(--text-sec); font-size:15px; line-height:1.6; max-width:46ch; margin:0 auto 20px; }
