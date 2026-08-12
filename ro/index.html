@@ -10,7 +10,7 @@
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="/images/architecture-static.webp" fetchpriority="high">
   <title>TVL Data Transfer | Stratul de date suveran pentru AI</title>
-  <meta name="description" content="Mută datele enterprise din orice sursă către orice agent AI, guvernate și suverane. Change data capture în lake-ul, baza de date sau warehouse-ul tău, servite agenților prin MCP.">
+  <meta name="description" content="Change data capture aproape în timp real din SAP, Oracle și SQL Server în data lake-ul, baza de date sau warehouse-ul tău, servite agenților AI prin MCP. Datele tale, cheile tale, regiunea ta.">
   <meta property="og:title" content="TVL Data Transfer: Stratul de date suveran pentru AI">
   <meta property="og:description" content="Din orice sursă către orice agent AI, guvernate și pregătite. CDC în lake-ul, baza de date sau warehouse-ul tău, rafinate și auditabile, interogate printr-un server MCP. Aliniat la EU AI Act și GDPR.">
   <meta property="og:type" content="website">
@@ -75,7 +75,8 @@
       { "@type": "Question", "name": "Cum consumă agenții AI datele?", "acceptedAnswer": { "@type": "Answer", "text": "Printr-un server MCP, agenții tăi interoghează direct datele guvernate din stratul Gold. Rulează în SUA, în UE sau on premise, iar fiecare răspuns este trasabil la înregistrări reale, pregătite și auditabile." } },
       { "@type": "Question", "name": "Este fiabil la scală?", "acceptedAnswer": { "@type": "Answer", "text": "Fiecare batch este urmărit într-o tranzacție și reîncercat prin întreruperi, așa că livrarea reia de unde s-a oprit, fără nimic pierdut. Throughput-ul maxim susținut pe deployment-ul de referință este de 22.000 rânduri pe secundă și scalează de la 2 la mii de noduri." } },
       { "@type": "Question", "name": "Se poate sincroniza în ambele direcții fără ca datele să se ciocnească?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Pipeline-ul rulează bidirecțional și multi primary, așa că mai multe sisteme pot scrie simultan. Conflictele sunt detectate pe cheia primară, pe datele modificate sau pe o coloană de timestamp ori versiune, apoi rezolvate cu o strategie deterministă precum newer wins, ori marcate pentru revizuire manuală, iar tu stabilești regula per tabel." } },
-      { "@type": "Question", "name": "Cum începem, cu o migrare sau sincronizare continuă?", "acceptedAnswer": { "@type": "Answer", "text": "Oricare. Delimităm, construim și operăm pipeline-ul cap la cap: o migrare unică de pe un sistem legacy, o sincronizare continuă între platforme sau un strat de integrare permanent. Spune-ne cele două sisteme și ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre." } }
+      { "@type": "Question", "name": "Cum începem, cu o migrare sau sincronizare continuă?", "acceptedAnswer": { "@type": "Answer", "text": "Oricare. Delimităm, construim și operăm pipeline-ul cap la cap: o migrare unică de pe un sistem legacy, o sincronizare continuă între platforme sau un strat de integrare permanent. Spune-ne cele două sisteme și ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre." } },
+      { "@type": "Question", "name": "Sincronizarea este în timp real sau batch?", "acceptedAnswer": { "@type": "Answer", "text": "Aproape în timp real. Change data capture citește fiecare schimbare confirmată din log sau din triggere pe măsură ce se produce, nu pe un program nocturn. Fiecare schimbare este urmărită într-o tranzacție și livrată în ordine, așa că target-ul tău rămâne actual cât timp sistemele sursă rulează în continuare." } }
     ]
   }
   </script>
@@ -232,7 +233,7 @@
     <div class="section-title-center fade-in">
       <span class="red-label">Suveranitate, definită</span>
       <h2 class="section-h2">Suverane atunci când ai nevoie</h2>
-      <p>Suveranitatea este o alegere pe care o arhitecturezi. Construim astfel încât datele să poată rămâne în UE sau on premise, sub cheile și jurisdicția ta, aliniate la EU AI Act, GDPR și Gaia-X.</p>
+      <p>Suveranitatea este o alegere pe care o arhitecturezi. Construim pentru rezidența datelor în UE sau on premise, sub cheile și jurisdicția ta, aliniate la EU AI Act, GDPR și Gaia-X.</p>
     </div>
     <div class="urgenta-grid">
       <div class="urgenta-card fade-in">
@@ -298,8 +299,8 @@
 <section class="sprint-focus" id="sources">
   <div class="container">
     <div class="section-title-center fade-in">
-      <h2 class="section-h2">Surse enterprise în data lake-ul sau warehouse-ul tău</h2>
-      <p>Aduci datele în target-ul pe care îl alegi: un data lake, o bază de date sau un warehouse precum BigQuery, Postgres, MySQL, Oracle, Splunk sau Elasticsearch. O încărcare curată a istoricului, apoi un flux live, cât timp sistemele sursă rulează în continuare.</p>
+      <h2 class="section-h2">SAP, Oracle și SQL Server în data lake-ul sau warehouse-ul tău</h2>
+      <p>Aduci datele în target-ul pe care îl alegi: un data lake, o bază de date sau un warehouse precum BigQuery, Postgres, MySQL, Oracle, Splunk sau Elasticsearch. Change data capture face o încărcare curată a istoricului, apoi un flux live aproape în timp real, cât timp sistemele sursă rulează în continuare.</p>
     </div>
 
     <div class="flow-diagram fade-in">
@@ -353,7 +354,7 @@
   <div class="container">
     <div class="section-title-center fade-in">
       <span class="red-label">Rafinarea datelor</span>
-      <h2 class="section-h2">Trei straturi, de la captura brută la tabele pregătite pentru business</h2>
+      <h2 class="section-h2">Arhitectură medallion, de la captura brută la tabele pregătite pentru business</h2>
       <p>Fiecare strat trăiește în target-ul tău, versionat și auditabil.</p>
     </div>
     <div class="steps-grid">
@@ -691,6 +692,13 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">Oricare. Delimităm, construim și operăm pipeline-ul cap la cap: o migrare unică de pe un sistem legacy, o sincronizare continuă între platforme sau un strat de integrare permanent. Spune-ne cele două sisteme și ridicăm un pipeline funcțional pe datele tale în săptămâni, nu trimestre.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" type="button">
+          Sincronizarea este în timp real sau batch?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Aproape în timp real. Change data capture citește fiecare schimbare confirmată din log sau din triggere pe măsură ce se produce, nu pe un program nocturn. Fiecare schimbare este urmărită într-o tranzacție și livrată în ordine, așa că target-ul tău rămâne actual cât timp sistemele sursă rulează în continuare.</div>
       </div>
     </div>
   </div>
